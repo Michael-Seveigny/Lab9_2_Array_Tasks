@@ -30,6 +30,50 @@ Press any key to continue . . .
 #include <iostream>
 using namespace std;
 
+bool isSortedIncreasing(int values[], int size);
+bool isSortedDecreasing(int values[], int size);
+bool hasAdjacentDuplicates(int values[], int size);
+bool hasDuplicates(int values[], int size);
+
+int main(void) {
+	// Declare variables
+	const int Size = 6;
+	int arr[Size];
+
+	// Get user input
+	for (int i = 0; i < Size; i++) {
+		cout << "Enter integer #" << i << ": ";
+		cin >> arr[i];
+	}
+
+	// Test and display results
+	if (isSortedIncreasing(arr, Size)) {
+		cout << "The data are increasing." << endl;
+	}
+	else {
+		cout << "The data are not increasing." << endl;
+	}
+	if (isSortedDecreasing(arr, Size)) {
+		cout << "The data are decreasing." << endl;
+	}
+	else {
+		cout << "The data are not decreasing." << endl;
+	}
+	if (hasAdjacentDuplicates(arr, Size)) {
+		cout << "The data has adjacent duplicates." << endl;
+	}
+	else {
+		cout << "The data does not have adjacent duplicates." << endl;
+	}
+	if (hasDuplicates(arr, Size)) {
+		cout << "The data has duplicates." << endl;
+	}
+	else {
+		cout << "The data does not have duplicates." << endl;
+	}
+	return 0;
+}
+
 // Returns true if the array is sorted in increasing order
 bool isSortedIncreasing(int values[], int size) {
 	for (int i = 0; i < size - 1; i++) {
@@ -70,45 +114,6 @@ bool hasDuplicates(int values[], int size) {
 		}
 	}
 	return false;
-}
-
-int main(void) {
-	// Declare variables
-	const int Size = 6;
-	int arr[Size];
-
-	// Get user input
-	for (int i = 0; i < Size; i++) {
-		cout << "Enter integer #" << i << ": ";
-		cin >> arr[i];
-	}
-
-	// Test and display results
-	if (isSortedIncreasing(arr, Size)) {
-		cout << "The data are increasing." << endl;
-	}
-	else {
-		cout << "The data are not increasing." << endl;
-	}
-	if (isSortedDecreasing(arr, Size)) {
-		cout << "The data are decreasing." << endl;
-	}
-	else {
-		cout << "The data are not decreasing." << endl;
-	}
-	if (hasAdjacentDuplicates(arr, Size)) {
-		cout << "The data has adjacent duplicates." << endl;
-	}
-	else {
-		cout << "The data does not have adjacent duplicates." << endl;
-	}
-	if (hasDuplicates(arr, Size)) {
-		cout << "The data has duplicates." << endl;
-	}
-	else {
-		cout << "The data does not have duplicates." << endl;
-	}
-	return 0;
 }
 
 
