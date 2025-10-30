@@ -12,6 +12,20 @@ the array, e.g.:
 bool hasDuplicates( int values[], int size )
 Write, test, and then commit each of these functions using hard-coded values in your
 main function. An example commit messages would be “Completed isSortedIncreasing”
+Provide a program that tests your functions via a loop construct for acquiring testing data for an array of six
+elements (please note that the array functions must be written to handle any number of elements).
+Example run (with user input indicated with bold italics):
+Enter integer #0: 1
+Enter integer #1: 2
+Enter integer #2: 2
+Enter integer #3: 4
+Enter integer #4: 6
+Enter integer #5: 7
+The data are increasing.
+The data are not decreasing.
+The data has adjacent duplicates.
+The data has duplicates.
+Press any key to continue . . .
 */
 #include <iostream>
 using namespace std;
@@ -59,12 +73,45 @@ bool hasDuplicates(int values[], int size) {
 }
 
 int main(void) {
-	int arr1[] = { 1, 2, 3, 4, 5 };
-	cout << (isSortedIncreasing(arr1, 5) ? "true" : "false") << endl;
-	cout << (isSortedDecreasing(arr1, 5) ? "true" : "false") << endl;
-	cout << (hasAdjacentDuplicates(arr1, 5) ? "true" : "false") << endl;
-	cout << (hasDuplicates(arr1, 5) ? "true" : "false") << endl;
+	// Declare variables
+	const int Size = 6;
+	int arr[Size];
+
+	// Get user input
+	for (int i = 0; i < Size; i++) {
+		cout << "Enter integer #" << i << ": ";
+		cin >> arr[i];
+	}
+
+	// Test and display results
+	if (isSortedIncreasing(arr, Size)) {
+		cout << "The data are increasing." << endl;
+	}
+	else {
+		cout << "The data are not increasing." << endl;
+	}
+	if (isSortedDecreasing(arr, Size)) {
+		cout << "The data are decreasing." << endl;
+	}
+	else {
+		cout << "The data are not decreasing." << endl;
+	}
+	if (hasAdjacentDuplicates(arr, Size)) {
+		cout << "The data has adjacent duplicates." << endl;
+	}
+	else {
+		cout << "The data does not have adjacent duplicates." << endl;
+	}
+	if (hasDuplicates(arr, Size)) {
+		cout << "The data has duplicates." << endl;
+	}
+	else {
+		cout << "The data does not have duplicates." << endl;
+	}
+	return 0;
 }
+
+
 
 
 
