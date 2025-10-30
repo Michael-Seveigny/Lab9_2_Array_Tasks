@@ -58,8 +58,3 @@ bool hasDuplicates(int values[], int size) {
 	return false;
 }
 
-int main(void) {
-	int arr1[] = { 1, 2, 3, 4, 5 };
-	cout << "arr1 is sorted increasing: " << isSortedIncreasing(arr1, 5) << endl;
-
-}
