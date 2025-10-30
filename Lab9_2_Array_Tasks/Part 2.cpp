@@ -58,5 +58,13 @@ bool hasDuplicates(int values[], int size) {
 	return false;
 }
 
+int main(void) {
+	int arr1[] = { 1, 2, 3, 4, 5 };
+	cout << (isSortedIncreasing(arr1, 5) ? "true" : "false") << endl;
+	cout << (isSortedDecreasing(arr1, 5) ? "true" : "false") << endl;
+	cout << (hasAdjacentDuplicates(arr1, 5) ? "true" : "false") << endl;
+	cout << (hasDuplicates(arr1, 5) ? "true" : "false") << endl;
+}
+
 
 
